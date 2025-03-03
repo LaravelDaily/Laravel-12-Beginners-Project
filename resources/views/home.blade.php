@@ -26,10 +26,14 @@
     <aside class="w-1/4 bg-white p-6 shadow-md rounded-lg">
         <h2 class="text-xl font-semibold mb-4">Categories</h2>
         <ul class="space-y-2">
-            <li><a href="#" class="text-gray-600 hover:text-gray-800">Technology</a></li>
-            <li><a href="#" class="text-gray-600 hover:text-gray-800">Design</a></li>
-            <li><a href="#" class="text-gray-600 hover:text-gray-800">Development</a></li>
-            <li><a href="#" class="text-gray-600 hover:text-gray-800">Marketing</a></li>
+            @foreach($categories as $category)
+                <li>
+                    <a href="/?category_id={{ $category->id }}"
+                       class="text-gray-600 hover:text-gray-800">
+                        {{ $category->name }}
+                    </a>
+                </li>
+            @endforeach
         </ul>
     </aside>
 </main>

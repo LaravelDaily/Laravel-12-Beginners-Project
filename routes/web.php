@@ -1,12 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    $categories = DB::table('categories')->get();
-    return view('home', ['categories' => $categories]);
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])
+    ->name('home');
 
 Route::view('article', 'article')->name('article');
 Route::view('contact', 'contact')->name('contact');
