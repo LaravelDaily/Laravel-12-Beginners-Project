@@ -6,20 +6,15 @@
     <section class="w-3/4 bg-white p-6 shadow-md rounded-lg">
         <h2 class="text-xl font-semibold mb-4">Latest Posts</h2>
         <div class="space-y-6">
+            @foreach($posts as $post)
             <article class="flex gap-4 border-b pb-4">
                 <img src="{{ asset('images/placeholder-150x150.png') }}" alt="Post Image" class="w-32 h-32 object-cover rounded">
                 <div>
-                    <h3 class="text-lg font-semibold"><a href="#" class="hover:underline">Blog Post Title</a></h3>
-                    <p class="text-gray-600">A short description of the blog post goes here...</p>
+                    <h3 class="text-lg font-semibold"><a href="#" class="hover:underline">{{ $post->title }}</a></h3>
+                    <p class="text-gray-600">{{ substr($post->text, 0, 50) }}...</p>
                 </div>
             </article>
-            <article class="flex gap-4 border-b pb-4">
-                <img src="{{ asset('images/placeholder-150x150.png') }}" alt="Post Image" class="w-32 h-32 object-cover rounded">
-                <div>
-                    <h3 class="text-lg font-semibold"><a href="#" class="hover:underline">Another Blog Post</a></h3>
-                    <p class="text-gray-600">Another short description of a blog post...</p>
-                </div>
-            </article>
+            @endforeach
         </div>
     </section>
     <!-- Sidebar Section -->
