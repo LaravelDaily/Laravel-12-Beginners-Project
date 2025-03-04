@@ -7,7 +7,7 @@ use App\Http\Controllers\PostController;
 Route::get('/', [HomeController::class, 'index'])
     ->name('home');
 
-Route::get('posts/{postId}', [PostController::class, 'show'])
+Route::get('posts/{post}', [PostController::class, 'show'])
     ->name('post.show');
 
 Route::view('contact', 'contact')->name('contact');
